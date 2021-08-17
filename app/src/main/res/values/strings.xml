@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Management App</string>
+    <string name="login_as">LOGIN AS</string>
+    <string name="admnistrator">ADMNISTRATOR</string>
+    <string name="button3">Button</string>
+    <string name="employee">EMPLOYEE</string>
+    <string name="name">Name</string>
+    <string name="button">Button</string>
+    <string name="username">USERNAME</string>
+    <string name="username1">USERNAME</string>
+    <string name="password">PASSWORD</string>
+    <string name="button1">Button</string>
+    <string name="login">LOGIN</string>
+    <array name="departments">
+        <item>Technical</item>
+        <item>Support</item>
+        <item>Research and Development</item>
+        <item>Marketing</item>
+        <item>Human Resource</item>
+    </array>
+    <string name="title_activity_admin_bottom_n_avidgation">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_trial_bottom_navigation">MainActivity</string>
+    <string name="title_activity_fragments">MainActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

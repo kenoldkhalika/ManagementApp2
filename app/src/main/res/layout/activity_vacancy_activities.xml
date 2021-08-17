@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VacancyActivities">
+
+    <ImageView
+        android:layout_width="95dp"
+        android:id="@+id/backtoad"
+        android:layout_height="77dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="316dp"
+        android:layout_marginRight="316dp"
+        android:src="@drawable/ic_action_backwards" />
+
+    <EditText
+        android:id="@+id/writevacancy"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="185dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp" />
+
+    <Button
+        android:id="@+id/addVacaciess"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/writevacancy"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="2dp"
+        android:textSize="20dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:background="@drawable/text_multline"
+        android:gravity="center"
+        android:text="ADD VACANCY" />
+
+    <Button
+        android:id="@+id/ViewVacacies"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/addVacaciess"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/text_multline"
+       android:text="VIEW VACANCY" />
+
+</RelativeLayout>

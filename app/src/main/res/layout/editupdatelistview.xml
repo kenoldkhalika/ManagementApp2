@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/updateZ"
+        android:layout_marginTop="200dp"/>
+
+    <ImageView
+        android:id="@+id/idnameq"
+        android:layout_width="97dp"
+        android:layout_height="83dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="314dp"
+        android:layout_marginRight="314dp"
+        android:src="@drawable/ic_action_backwards" />
+
+    <Button
+        android:id="@+id/deleteupdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/updateZ"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="2dp"
+        android:textSize="20dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:background="@drawable/text_multline"
+        android:gravity="center"
+        android:text="DELETE" />
+
+    <Button
+        android:id="@+id/updateUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/deleteupdate"
+        android:layout_marginTop="54dp"
+        android:background="@drawable/text_multline"
+        android:text="UPDATE" />
+</RelativeLayout>
