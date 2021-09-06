@@ -18,8 +18,7 @@ public class updatesActivity extends AppCompatActivity implements View.OnClickLi
     EditText updates;
     Button addUpdates, viewUpdates;
     Databasee myDB;
- ImageView back;
-
+    ImageView back;
 
 
     @Override
@@ -29,19 +28,19 @@ public class updatesActivity extends AppCompatActivity implements View.OnClickLi
         updates = findViewById(R.id.writeUpdates);
         addUpdates = findViewById(R.id.addUpdatess);
         viewUpdates = findViewById(R.id.ViewUpdatess);
-        ActionBar actionBar=getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         findViewById(R.id.ViewUpdatess).setOnClickListener(this);
         findViewById(R.id.addUpdatess).setOnClickListener(this);
         updates.setOnClickListener(this);
-        back=findViewById(R.id.sasa);
-back.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        Intent intent= new Intent(updatesActivity.this, adminduties.class);
-        startActivity(intent);
-    }
-});
+        back = findViewById(R.id.sasa);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(updatesActivity.this, adminduties.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -49,28 +48,29 @@ back.setOnClickListener(new View.OnClickListener() {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.addUpdatess:
-                String empName = updates.getText().toString().trim();
+                String updtes = updates.getText().toString().trim();
 
+                if (updtes.equals("")) {
+                    Toast.makeText(updatesActivity.this, "Please enter update ", Toast.LENGTH_SHORT).show();
 
-                Databasee db = new Databasee(this);
+                } else {
+                    Databasee db = new Databasee(this);
+                    boolean success = db.addUpdates(updtes);
+                    if (success) {
 
+                        Toast.makeText(this, "Details saved", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(this, "failed to save", Toast.LENGTH_SHORT).show();
 
-                boolean success =  db.addUpdates(empName);
-                if (success) {
-
-                    Toast.makeText(this, "Details saved", Toast.LENGTH_SHORT).show();
-                }else {
-                    Toast.makeText(this, "failed to save", Toast.LENGTH_SHORT).show();
-
+                    }
                 }
-
                 break;
             case R.id.ViewUpdatess:
                 Intent intent = new Intent(updatesActivity.this, ViewUpdateS.class);
                 startActivity(intent);
-              //  startActivity(new Intent(this, ViewUpdateS.class));
+                //  startActivity(new Intent(this, ViewUpdateS.class));
 
                 break;
         }
     }
-    }
+}

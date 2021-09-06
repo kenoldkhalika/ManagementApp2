@@ -7,19 +7,18 @@
     tools:context=".VacancyActivities">
 
     <ImageView
-        android:layout_width="95dp"
+
         android:id="@+id/backtoad"
-        android:layout_height="77dp"
+        android:layout_width="77dp"
+        android:layout_height="52dp"
+
+
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="316dp"
-        android:layout_marginRight="316dp"
+        android:layout_marginStart="-8dp"
+        android:layout_marginLeft="-8dp"
+        android:layout_marginTop="-2dp"
         android:src="@drawable/ic_action_backwards" />
 
     <EditText
@@ -27,9 +26,13 @@
         android:layout_width="match_parent"
 
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="185dp"
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp" />

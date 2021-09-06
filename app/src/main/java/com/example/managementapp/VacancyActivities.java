@@ -17,11 +17,12 @@ public class VacancyActivities extends AppCompatActivity implements View.OnClick
     Button addVacancy, viewvacancy;
     Databasee myDB;
     ImageView back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vacancy_activities);
-        ActionBar actionBar=getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         vacancy = findViewById(R.id.writevacancy);
         addVacancy = findViewById(R.id.addVacaciess);
@@ -30,11 +31,11 @@ public class VacancyActivities extends AppCompatActivity implements View.OnClick
         findViewById(R.id.addVacaciess).setOnClickListener(this);
         vacancy.setOnClickListener(this);
 
-        back=findViewById(R.id.backtoad);
+        back = findViewById(R.id.backtoad);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(VacancyActivities.this, adminduties.class);
+                Intent intent = new Intent(VacancyActivities.this, adminduties.class);
                 startActivity(intent);
             }
         });
@@ -46,27 +47,30 @@ public class VacancyActivities extends AppCompatActivity implements View.OnClick
         switch (v.getId()) {
             case R.id.addVacaciess:
                 String empName = vacancy.getText().toString().trim();
+                if (empName.equals("")) {
+                    Toast.makeText(VacancyActivities.this, "Please enter vacancy ", Toast.LENGTH_SHORT).show();
+
+                } else {
+
+                    Databasee db = new Databasee(this);
 
 
-                Databasee db = new Databasee(this);
+                    boolean success = db.addVacancy(empName);
+                    if (success) {
 
+                        Toast.makeText(this, "Details saved", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(this, "failed to save", Toast.LENGTH_SHORT).show();
 
-                boolean success =  db.addVacancy(empName);
-                if (success) {
-
-                    Toast.makeText(this, "Details saved", Toast.LENGTH_SHORT).show();
-                }else {
-                    Toast.makeText(this, "failed to save", Toast.LENGTH_SHORT).show();
-
+                    }
                 }
-
                 break;
             case R.id.ViewVacacies:
 //                Intent intent = new Intent(VacancyActivities.this, ViewVacancies.class);
 //                startActivity(intent);
-                 startActivity(new Intent(this, ViewVacancies.class));
+                startActivity(new Intent(this, ViewVacancies.class));
 
                 break;
         }
     }
-    }
+}

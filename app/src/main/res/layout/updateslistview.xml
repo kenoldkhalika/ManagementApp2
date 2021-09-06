@@ -4,52 +4,37 @@
 
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
+
+        android:id="@+id/backback"
+        android:layout_width="77dp"
+        android:layout_height="52dp"
+
+
         android:layout_alignParentStart="true"
-      android:id="@+id/backback"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="325dp"
-        android:layout_marginRight="325dp"
+        android:layout_marginStart="-8dp"
+        android:layout_marginLeft="-8dp"
+        android:layout_marginTop="-2dp"
         android:src="@drawable/ic_action_backwards" />
-    <EditText
-        android:id="@+id/searchDk"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-
-
-
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/text_multline"
-        android:drawableLeft="@drawable/ic_action_search"
-        android:hint="search" />
 
 
     <ListView
         android:id="@+id/updatesliStvIew"
+
         android:layout_width="wrap_content"
-        android:layout_height="609dp"
+        android:layout_height="674dp"
+        android:layout_below="@+id/backback"
+
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-
-
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="81dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="0dp" />
 </RelativeLayout>

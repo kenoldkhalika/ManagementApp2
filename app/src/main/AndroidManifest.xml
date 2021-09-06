@@ -21,22 +21,20 @@
         <activity
             android:name=".TrialBottomNavigation"
             android:label="@string/title_activity_trial_bottom_navigation" />
-        <activity android:name=".ViewJobActvityy" />
         <activity android:name=".ViewVacancies" />
         <activity android:name=".JobActivity" />
-        <activity android:name=".ShowData" />
-        <activity android:name=".ViewEmployee" />
         <activity android:name=".MainActivityPicture" />
         <activity android:name=".manageEmployeess" />
         <activity android:name=".EditUpdateActivity" />
         <activity android:name=".EditVacancyActivity" />
         <activity android:name=".EditJobActivity" />
+        <activity android:name=".EditEmployeeActivity" />
+        <activity android:name=".listOfEmployees" />
         <activity android:name=".updatesActivity" />
         <activity android:name=".employeeplatform" />
         <activity android:name=".adminduties" />
         <activity android:name=".registernewemployee" />
         <activity android:name=".employeeloginform" />
-        <activity android:name=".adminnform" />
         <activity android:name=".ViewUpdateS" />
         <activity android:name=".MainActivity">
             <intent-filter>

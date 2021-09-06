@@ -19,13 +19,14 @@ public class EditUpdateActivity extends AppCompatActivity {
     private String selectedUpdate;
     private int selectedID;
     ImageView back;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.editupdatelistview);
 
 
-        back=findViewById(R.id.idnameq);
+        back = findViewById(R.id.idnameq);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,27 +36,23 @@ public class EditUpdateActivity extends AppCompatActivity {
         });
 
 
-
-
-update=findViewById(R.id.updateUpdate);
-        ActionBar actionBar=getSupportActionBar();
+        update = findViewById(R.id.updateUpdate);
+        ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-delete=findViewById(R.id.deleteupdate);
-editUpdate=findViewById(R.id.updateZ);
-myDB=new Databasee(this);
+        delete = findViewById(R.id.deleteupdate);
+        editUpdate = findViewById(R.id.updateZ);
+        myDB = new Databasee(this);
         Intent receivedIntent = getIntent();
-        selectedID=receivedIntent.getIntExtra("id", -1);
-        selectedUpdate =receivedIntent.getStringExtra("update");
+        selectedID = receivedIntent.getIntExtra("id", -1);
+        selectedUpdate = receivedIntent.getStringExtra("update");
         editUpdate.setText(selectedUpdate);
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String update = editUpdate.getText().toString();
-                if (update.isEmpty()){
-                    myDB.updateUpdate(update,selectedID,selectedUpdate);
-                }
-
-                else {
+                String update = editUpdate.getText().toString().trim();
+                if (!update.isEmpty()) {
+                    myDB.updateUpdate(update, selectedID, selectedUpdate, getApplicationContext());
+                } else {
                     Toast.makeText(EditUpdateActivity.this, "put somethig", Toast.LENGTH_LONG).show();
                 }
             }
@@ -63,10 +60,10 @@ myDB=new Databasee(this);
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myDB.deleteUpdate(selectedUpdate,selectedID);
+                myDB.deleteUpdate(selectedUpdate, selectedID);
                 Toast.makeText(EditUpdateActivity.this, "deleted successfully", Toast.LENGTH_LONG).show();
                 editUpdate.setText("");
-                Intent editUpdate=new Intent(EditUpdateActivity.this, updatesActivity.class);
+                Intent editUpdate = new Intent(EditUpdateActivity.this, updatesActivity.class);
                 startActivity(editUpdate);
 
             }

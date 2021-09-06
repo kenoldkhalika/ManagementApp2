@@ -1,4 +1,4 @@
- package com.example.managementapp;
+package com.example.managementapp;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -17,27 +17,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-public class ViewUpdateS  extends AppCompatActivity {
+public class ViewUpdateS extends AppCompatActivity {
     Databasee myDB;
     private ListView listView;
     ImageView back;
     String update;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.updateslistview);
-        back=findViewById(R.id.backback);
+        back = findViewById(R.id.backback);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(ViewUpdateS.this, updatesActivity.class);
+                Intent intent = new Intent(ViewUpdateS.this, updatesActivity.class);
                 startActivity(intent);
             }
         });
 
 
-
-        ActionBar actionBar=getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         listView = (ListView) findViewById(R.id.updatesliStvIew);
         myDB = new Databasee(this);
@@ -59,22 +59,20 @@ public class ViewUpdateS  extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String string =(String) parent.getItemAtPosition(position);
-                Cursor data=myDB.getUpdatesID(string);
-                int itemID= -1;
-                while (data.moveToNext()){
-                    itemID=data.getInt(0);
+                String string = (String) parent.getItemAtPosition(position);
+                Cursor data = myDB.getUpdatesID(string);
+                int itemID = -1;
+                while (data.moveToNext()) {
+                    itemID = data.getInt(0);
                 }
-                if (itemID>-1){
-                    Intent editUpdate=new Intent(ViewUpdateS.this, EditUpdateActivity.class);
+                if (itemID > -1) {
+                    Intent editUpdate = new Intent(ViewUpdateS.this, EditUpdateActivity.class);
                     editUpdate.putExtra("id", itemID);
                     editUpdate.putExtra("update", string);
                     startActivity(editUpdate);
                 }
             }
         });
-
-
 
 
     }

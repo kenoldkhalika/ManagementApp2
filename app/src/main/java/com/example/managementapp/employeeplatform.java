@@ -10,15 +10,15 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class employeeplatform extends AppCompatActivity {
-TextView btn2;
-TextView tx,text,report;
+    TextView btn2;
+    TextView tx, text, report;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employeeplatform);
-      //  btn2 = (TextView) findViewById(R.id.jobView);
-        ActionBar actionBar=getSupportActionBar();
+        //  btn2 = (TextView) findViewById(R.id.jobView);
+        ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 //        btn2.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -31,11 +31,11 @@ TextView tx,text,report;
         tx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(employeeplatform.this, ViewListOfJobActivity.class);
+                Intent intent = new Intent(employeeplatform.this, ViewListOfJobActivity.class);
                 startActivity(intent);
             }
         });
-       // text = (TextView) findViewById(R.id.jobView);
+        // text = (TextView) findViewById(R.id.jobView);
 //        text.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {

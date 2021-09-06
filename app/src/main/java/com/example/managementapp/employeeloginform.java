@@ -24,12 +24,12 @@ public class employeeloginform extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employeeloginform);
-        ActionBar actionBar=getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-            back=findViewById(R.id.backToHome);
+        back = findViewById(R.id.backToHome);
         btnm = (TextView) findViewById(R.id.registernuewemployee);
-       btnm.setOnClickListener(new View.OnClickListener() {
+        btnm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(employeeloginform.this, registernewemployee.class);
@@ -58,7 +58,7 @@ public class employeeloginform extends AppCompatActivity {
                     Boolean checkuserpass = DB.passwordmetod(user, pass);
                     if (checkuserpass == true) {
                         Toast.makeText(employeeloginform.this, "sign in successfully", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), employeeplatform.class);
+                        Intent intent = new Intent(getApplicationContext(), adminduties.class);
                         startActivity(intent);
                     } else {
                         Toast.makeText(employeeloginform.this, "invalid credentials", Toast.LENGTH_SHORT).show();

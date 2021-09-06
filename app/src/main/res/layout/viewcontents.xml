@@ -18,12 +18,10 @@ android:id="@+id/dd"
         android:layout_marginRight="325dp"
         android:src="@drawable/ic_action_backwards" />
 
-    <EditText
-        android:id="@+id/searchDke"
-        android:layout_width="318dp"
-        android:layout_height="40dp"
-
-
+    <SearchView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="4dp"

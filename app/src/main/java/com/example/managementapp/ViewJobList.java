@@ -18,28 +18,28 @@ import java.util.ArrayList;
 
 public class ViewJobList extends AppCompatActivity {
     ImageView back;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         Databasee myDB;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.viewcontents);
-        ActionBar actionBar=getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        ListView listView= (ListView) findViewById(R.id.ListVView);
-        myDB= new Databasee(this);
-        ArrayList<String> thelist= new ArrayList<>();
-        Cursor cursor= myDB.readalljob();
-        if (cursor.getCount()==0){
-            Toast.makeText(ViewJobList.this,"Database is empty", Toast.LENGTH_LONG).show();
-        }
-        else {
-          while (cursor.moveToNext()){
-              thelist.add(cursor.getString(1));
-              thelist.add(cursor.getString(2));
-              ListAdapter listAdapter= new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,thelist);
-              listView.setAdapter(listAdapter);
-          }
+        ListView listView = (ListView) findViewById(R.id.ListVView);
+        myDB = new Databasee(this);
+        ArrayList<String> thelist = new ArrayList<>();
+        Cursor cursor = myDB.readalljob();
+        if (cursor.getCount() == 0) {
+            Toast.makeText(ViewJobList.this, "Database is empty", Toast.LENGTH_LONG).show();
+        } else {
+            while (cursor.moveToNext()) {
+                thelist.add(cursor.getString(1));
+                thelist.add(cursor.getString(2));
+                ListAdapter listAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, thelist);
+                listView.setAdapter(listAdapter);
+            }
         }
     }
 }

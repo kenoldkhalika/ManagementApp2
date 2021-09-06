@@ -12,47 +12,46 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class EditVacancyActivity  extends AppCompatActivity {
+public class EditVacancyActivity extends AppCompatActivity {
     private Button update, delete;
     private EditText editVacancy;
     ImageView back;
     Databasee myDB;
     private String selectedUpdate;
     private int selectedID;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.editvacancylistview);
 
-        back=findViewById(R.id.g);
+        back = findViewById(R.id.g);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(EditVacancyActivity.this, ViewVacancies.class);
+                Intent intent = new Intent(EditVacancyActivity.this, ViewVacancies.class);
                 startActivity(intent);
             }
         });
 
 
-        ActionBar actionBar=getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-        update=findViewById(R.id.updateVacancy);
-        delete=findViewById(R.id.deleteVacancy);
-        editVacancy=findViewById(R.id.vacancyZ);
-        myDB=new Databasee(this);
+        update = findViewById(R.id.updateVacancy);
+        delete = findViewById(R.id.deleteVacancy);
+        editVacancy = findViewById(R.id.vacancyZ);
+        myDB = new Databasee(this);
         Intent receivedIntent = getIntent();
-        selectedID=receivedIntent.getIntExtra("id", -1);
-        selectedUpdate =receivedIntent.getStringExtra("update");
+        selectedID = receivedIntent.getIntExtra("id", -1);
+        selectedUpdate = receivedIntent.getStringExtra("update");
         editVacancy.setText(selectedUpdate);
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String vacancy = editVacancy.getText().toString();
-                if (vacancy.isEmpty()){
-                    myDB.updateVacancy(vacancy,selectedID,selectedUpdate);
-                }
-
-                else {
+                String vacancy = editVacancy.getText().toString().trim();
+                if (!vacancy.isEmpty()) {
+                    myDB.updateVacancy(vacancy, selectedID, selectedUpdate, getApplicationContext());
+                } else {
                     Toast.makeText(EditVacancyActivity.this, "put somethig", Toast.LENGTH_LONG).show();
                 }
             }
@@ -60,7 +59,7 @@ public class EditVacancyActivity  extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myDB.deleteVacancy(selectedUpdate,selectedID);
+                myDB.deleteVacancy(selectedUpdate, selectedID);
                 Toast.makeText(EditVacancyActivity.this, "deleted successfully", Toast.LENGTH_LONG).show();
                 editVacancy.setText("");
 //                Intent editUpdate=new Intent(EditVacancyActivity.this, updatesActivity.class);

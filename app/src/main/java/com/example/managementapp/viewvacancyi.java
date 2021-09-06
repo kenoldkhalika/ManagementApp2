@@ -10,9 +10,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class viewvacancyi extends AppCompatActivity {
-    Button sbmt,view;
+    Button sbmt, view;
     EditText vacancy;
     Databasee myDB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,5 +59,5 @@ public class viewvacancyi extends AppCompatActivity {
 //      else {Toast.makeText(viewvacancyi.this,"something went wrong", Toast.LENGTH_LONG).show();
 //        }
 
-   }
-   }
+    }
+}

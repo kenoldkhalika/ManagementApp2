@@ -14,37 +14,43 @@
         />
 <Button
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="40dp"
     android:text="MANAGE EMPOYEE"
     android:id="@+id/managemployeeebtn"
+    android:background="@drawable/text_multline"
     android:drawableLeft="@drawable/ic_action_people"
     android:layout_marginRight="40dp"
     android:layout_marginLeft="40dp"
-    android:layout_marginTop="210dp"/>
+    android:layout_marginTop="220dp"/>
     <Button
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:text="VACANCY"
+
+        android:background="@drawable/text_multline"
         android:id="@+id/vacncybtncg"
         android:layout_below="@+id/managemployeeebtn"
         android:drawableLeft="@drawable/ic_action_vacancy"
+
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="30dp"/>
     <Button
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:text="JOB SCHEDULE"
         android:id="@+id/jobschedulingtbtn"
         android:layout_below="@+id/vacncybtncg"
+        android:background="@drawable/text_multline"
         android:drawableLeft="@drawable/ic_action_job"
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="30dp"/>
     <Button
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:text="UPDATES"
+        android:background="@drawable/text_multline"
         android:id="@+id/adminnnlogimn"
         android:layout_below="@+id/jobschedulingtbtn"
         android:drawableLeft="@drawable/ic_action_job"
